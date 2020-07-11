@@ -30,7 +30,7 @@ const setGrid = (str) => {
  * @param {NodeList} nodeList
  */
 const convertInputsToString = (nodeList) => {
-  const result = '';
+  let result = '';
   for (let i = 0; i < nodeList.length; i++) {
     if (isNumberValid(nodeList[i].value)) {
       result += nodeList[i].value;
