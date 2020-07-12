@@ -50,8 +50,6 @@ const setTextArea = (inputs = sudokuInputs) => {
   textArea.value = sudokuString;
 };
 
-const { coords, groups, allUnits } = (() => {})();
-
 document.addEventListener('DOMContentLoaded', () => {
   // Load a simple puzzle into the text area
   textArea.value =
