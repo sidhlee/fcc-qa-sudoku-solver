@@ -263,6 +263,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setGrid(textArea.value);
   // NodeList inherits forEach method
   sudokuInputs.forEach((input) => input.addEventListener('input', setTextArea));
+
+  textArea.addEventListener('input', () => setGrid(textArea.value));
+
   solveButton.addEventListener(
     'click',
     () => {
@@ -290,9 +293,3 @@ try {
     displaySolution,
   };
 } catch (err) {} // eslint-disable-line
-
-console.log(
-  solveSudoku(
-    '..9..5.1.85.4....2432......1...69.83.9.....6.62.71...9......1945....4.37.4.3..6..'
-  )
-);

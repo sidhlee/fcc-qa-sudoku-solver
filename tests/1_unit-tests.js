@@ -16,7 +16,9 @@ let Solver;
 suite('UnitTests', () => {
   suiteSetup(() => {
     // Mock the DOM for testing and load Solver
-    return JSDOM.fromFile('./views/index.html').then((dom) => {
+    return JSDOM.fromFile('./views/index.html', {
+      runScripts: 'dangerously',
+    }).then((dom) => {
       global.window = dom.window;
       global.document = dom.window.document;
 
