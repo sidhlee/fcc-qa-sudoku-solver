@@ -1,8 +1,8 @@
-# freeCodeCamp\*\* - Quality Assurance 4: Sudoku Solver
+# FCC - Quality Assurance Project 4: Sudoku Solver
 
 ---
 
-## User stories:
+## User stories
 
 1. I can enter a sudoku puzzle by filling in the text area with either a number or period (.) to represent an empty cell.
 2. When a valid number is entered in the text area, the same number is applied to the correct cell of the sudoku grid.
@@ -17,14 +17,14 @@
 11. All 6 unit tests are complete and passing. See `/tests/1_unit-tests.js` for the expected behavior you should write tests for.
 12. All 4 functional tests are complete and passing. See `/tests/2_functional-tests.js` for the functionality you should write tests for.
 
-### Testing and additional notes
+## Testing and additional notes
 
 - To run the tests on Glitch, set NODE_ENV to `test` without quotes.
 - To run the tests in the console, use the command `npm run test`. To open the Glitch console, first click "Tools" in the bottom left corner and then click "Terminal".
 - All logic can go into `public/sudoku-solver.js`.
 - Create all of the unit/functional tests in `tests/1_unit-tests.js` and `tests/2_functional-tests.js`.
 
-## Notes:
+## Notes
 
 - Re-implement solving logic with different algorithm
 - Current implementation is based on the [answer](https://glitch.com/~bottlenose-eucalyptus) because I wasn't sure whether that particular implementation is coupled with the FCC testing.
