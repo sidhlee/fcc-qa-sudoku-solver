@@ -42,15 +42,47 @@ const subgrids = (() => {
   return result;
 })();
 
-const gridMap = gridCells.reduce((obj, cell) => {
-  obj;
+// You could also put together groups declaratively -
+// find groups that include cellName
+const cellGroupsMap = gridCells.reduce((obj, cellName, i) => {
+  obj[cellName] = [
+    gridRows[~~(i / 9)],
+    gridCols[i % 9],
+    subgrids[(~~(i / 3) % 3) + ~~(i / 27) * 3],
+  ];
+  return obj;
+}, {});
+
+const cellSubgridMap = gridCells.reduce((obj, cellName, i) => {
+  obj[cellName] = subgrids[(~~(i / 3) % 3) + ~~(i / 27) * 3];
+  return obj;
+}, {});
+
+/**
+ * Map cell to an array of all its peers
+ * (Use this to check a number is contained in all peers no more than once)
+ */
+const cellPeersMap = gridCells.reduce((obj, cellName) => {
+  const all = [
+    ...cellGroupsMap[cellName][0],
+    ...cellGroupsMap[cellName][1],
+    ...cellGroupsMap[cellName][2],
+  ].filter((peer) => peer !== cellName);
+
+  const set = new Set(all);
+
+  obj[cellName] = [...set];
+  return obj;
 }, {});
 
 const grid = {
   cells: gridCells,
   rows: gridRows,
   cols: gridCols,
-  subgrids: subgrids,
+  subgrids,
+  cellGroupsMap,
+  cellPeersMap,
+  cellSubgridMap,
 };
 
 module.exports = async () => {

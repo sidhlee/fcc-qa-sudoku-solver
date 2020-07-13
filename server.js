@@ -5,7 +5,8 @@ const expect = require('chai').expect;
 const cors = require('cors');
 
 require('./createModels')();
-require('./writeReference')();
+// Don't overwrite formatted JSON
+// require('./writeReference')();
 
 const fccTestingRoutes = require('./routes/fcctesting.js');
 const runner = require('./test-runner');

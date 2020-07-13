@@ -8,10 +8,11 @@
   "extends": ["prettier", "eslint:recommended", "plugin:prettier/recommended"],
   "plugins": ["prettier"],
   "parserOptions": {
-    "ecmaVersion": 11
+    "ecmaVersion": 11,
+    "sourceType": "module"
   },
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "off",
     "no-unused-vars": "warn"
   }
 }
